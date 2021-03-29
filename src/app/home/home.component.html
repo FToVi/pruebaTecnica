@@ -1,0 +1,53 @@
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <mat-card-title>Formulario</mat-card-title>
+
+      <form (ngSubmit)="submitForm()" [formGroup]="formulario" novalidate>
+        <br />
+        <div>
+          <mat-form-field appearance="fill" [hideRequiredMarker]="true">
+            <mat-label>Fecha de reserva</mat-label>
+            <input [min]="minDate" [max]="maxDate" matInput formControlName="fechaReserva" [matDatepicker]="picker" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="formulario.controls.fechaReserva.invalid && formulario.controls.fechaReserva.touched">
+              <span>Fecha de reserva es requerido</span>
+            </mat-error>
+          </mat-form-field>
+          <br /><br />
+
+          <mat-form-field [hideRequiredMarker]="true">
+            <input type="email" matInput formControlName="correo" [placeholder]="'correo' | translate" required />
+            <mat-error *ngIf="formulario.controls.correo.invalid && formulario.controls.correo.touched">
+              <span>Correo es requerido</span>
+            </mat-error>
+          </mat-form-field>
+          <br /><br />
+
+          <mat-form-field [hideRequiredMarker]="true">
+            <input type="text" matInput formControlName="nombre" [placeholder]="'nombre' | translate" required />
+            <mat-error *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched">
+              <span>Nombre es requerido</span>
+            </mat-error>
+          </mat-form-field>
+          <br /><br />
+
+          <mat-form-field appearance="fill">
+            <mat-label>Pais</mat-label>
+            <mat-select formControlName="pais">
+              <mat-option *ngFor="let pais of paises" [value]="pais.country">
+                {{ pais.country }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <br />
+          <button mat-flat-button color="primary" type="submit" [disabled]="formulario.invalid || isLoading">
+            Enviar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,20 @@
+{
+  "APP_NAME": "Prueba tecnica",
+  "About": "Componente uno",
+  "Hello world !": "¡Hola Mundo!",
+  "Home": "Dashboard",
+  "Logged in as": "Conectado como",
+  "Login": "Iniciar sesión",
+  "Logout": "Salir",
+  "Password": "Contraseña",
+  "Password is required": "Se requiere contraseña",
+  "Username": "Nombre de usuario",
+  "Username is required": "Se requiere nombre de usuario",
+  "Username or password incorrect.": "Usuario o contraseña incorrectos.",
+  "Remember me": "Recuérdame",
+  "Version": "Versión",
+
+  "fechaReserva": "Fecha de reserva",
+  "correo": "Correo",
+  "nombre": "Nombre"
+}
